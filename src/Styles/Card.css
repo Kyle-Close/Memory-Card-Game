@@ -1,0 +1,10 @@
+.image{
+  width: 100%; /* Stretch the image horizontally to fill the container */
+  height: 100%; /* Stretch the image vertically to fill the container */
+  object-fit: cover; /* Maintain aspect ratio and fill the container */
+}
+
+.card-container{
+  display: grid;
+  gap: 30px;
+}

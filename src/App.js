@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import { searchUnsplashPhotos } from "./APIs/Unsplash";
 
-import CardsContainer from "./Components/CardsContainer";
+import Cards from "./Components/Cards";
 
 function App() {
 
   const [imageData, setImageData] = useState(null);
 
   useEffect(() => {
-    searchUnsplashPhotos("landmarks", 2, 20).then((response) => {
+    searchUnsplashPhotos("landmarks", 1, 4).then((response) => {
       if (response && response.results && response.results.length > 0) {
         const imageData = response.results.map((image) => {
           return {
@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <CardsContainer images={imageData} />
+      <Cards images={imageData} />
     </div>
 
   );
