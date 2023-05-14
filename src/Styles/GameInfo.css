@@ -1,0 +1,22 @@
+.game-info{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 24px;
+  padding: 50px;
+}
+
+.game-info > div{
+  display: grid;
+
+}
+
+.game-info > div > .bot{
+  justify-self: center;
+  color: #9CCC65;
+}
+
+.current-level, .high-score{
+  padding: 0 80px;
+}
