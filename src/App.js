@@ -4,6 +4,7 @@ import Cards from './Components/Cards';
 import GameInfo from './Components/GameInfo';
 import SelectCategory from './Components/SelectCategory';
 import GetImageData from './Components/GetImageData';
+import GameOverModal from './Components/GameOverModal';
 
 import './Styles/App.css';
 
@@ -14,6 +15,7 @@ function App() {
 	const [currentCategory, setCurrentCategory] = useState(null);
 	const [currentScore, setCurrentScore] = useState(0);
 	const [highScore, setHighScore] = useState(0);
+	const [gameOver, setGameOver] = useState(false);
 
 	// Hooks
 	useEffect(() => {
@@ -22,7 +24,7 @@ function App() {
 
 	// Utility Functions
 	const levelImageCount = () => currentLevel * 2 + 2;
-	const isValid = () => currentCategory && imageData;
+	const isPlayGame = () => currentCategory && imageData && !gameOver;
 	const getCurrentCategoryIndex = () => {
 		if (imageData) {
 			return imageData.findIndex((obj) => obj.category === currentCategory);
@@ -30,9 +32,16 @@ function App() {
 		return -1;
 	};
 
+	// State setters
+	function incrementCurrentScore() {
+		setCurrentScore((prevCurrentScore) => prevCurrentScore + 1);
+	}
+
 	return (
 		<div className='App'>
-			{isValid() ? (
+			{gameOver ? (
+				<GameOverModal />
+			) : isPlayGame() ? (
 				<div className='info-cards-section'>
 					<GameInfo
 						currentLevel={currentLevel}
@@ -43,6 +52,8 @@ function App() {
 					<Cards
 						images={imageData[getCurrentCategoryIndex()]}
 						currentLevel={currentLevel}
+						incrementCurrentScore={incrementCurrentScore}
+						setGameOver={setGameOver}
 					/>
 				</div>
 			) : (
