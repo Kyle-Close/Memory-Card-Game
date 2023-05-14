@@ -13,7 +13,7 @@ function App() {
 
 	const [imageData, setImageData] = useState(null);
 	const [currentLevel, setCurrentLevel] = useState(1);
-	const [currentCategory, setCurrentCategory] = useState('Dogs');
+	const [currentCategory, setCurrentCategory] = useState(null);
 	const [highScore, setHighScore] = useState(null);
 
 	const levelImageCount = () => {
@@ -75,7 +75,7 @@ function App() {
 	return (
 		<div className='App'>
 			{isValid() ? (
-				<>
+				<div className='info-cards-section'>
 					<GameInfo
 						currentLevel={currentLevel}
 						currentCategory={currentCategory}
@@ -85,9 +85,9 @@ function App() {
 						images={imageData[index]}
 						currentLevel={currentLevel}
 					/>
-				</>
+				</div>
 			) : (
-				<SelectCategory />
+				imageData && <SelectCategory imageData={imageData} />
 			)}
 		</div>
 	);

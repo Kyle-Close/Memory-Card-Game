@@ -1,4 +1,24 @@
 .category-card {
 	margin: 25px;
 	border-radius: 12px;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	color: white;
+	font-weight: 900;
+	font-size: 30px;
+}
+
+.category-title {
+	margin-bottom: 30px;
+}
+
+.category-card:hover {
+	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+	transform: scale(1.05);
+}
+
+.how-to-play {
+	color: white;
+	font-weight: 100;
 }

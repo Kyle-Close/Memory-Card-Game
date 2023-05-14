@@ -1,22 +1,33 @@
-.game-info{
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  color: white;
-  font-size: 24px;
-  padding: 50px;
+.game-info {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	color: white;
+	font-size: 24px;
+	padding: 60px 0;
 }
 
-.game-info > div{
-  display: grid;
-
+.game-info > div {
+	display: grid;
+	gap: 10px;
 }
 
-.game-info > div > .bot{
-  justify-self: center;
-  color: #9CCC65;
+.game-info > div > .bot {
+	justify-self: center;
+	color: #9ccc65;
 }
 
-.current-level, .high-score{
-  padding: 0 80px;
+.current-level,
+.current-score {
+	padding: 0 80px;
+}
+
+.game-info-top {
+	justify-content: flex-end;
+	padding-bottom: 0;
+}
+
+.high-score {
+	padding-right: 105px;
+	color: red;
 }
