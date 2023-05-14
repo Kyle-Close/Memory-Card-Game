@@ -3,11 +3,6 @@ import React from 'react';
 import '../Styles/GameInfo.css';
 
 export default function GameInfo(props) {
-	// Displaying
-	// Current Level
-	// Image Category
-	// High score/level
-
 	return (
 		<>
 			<div className='game-info game-info-top'>

@@ -22,3 +22,16 @@
 	color: white;
 	font-weight: 100;
 }
+
+.how-to-play > span {
+	font-weight: 700;
+}
+
+.scoring-instructions {
+	color: white;
+	font-weight: 100;
+}
+
+.scoring-instructions > span {
+	font-weight: 700;
+}

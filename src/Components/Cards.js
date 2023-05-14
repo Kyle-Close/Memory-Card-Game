@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import '../Styles/Card.css';
 
 export default function Cards(props) {
-	console.log(props.images);
 	let images;
 	if (props.images) {
 		images = props.images.images.map((image) => {
