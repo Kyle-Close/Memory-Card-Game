@@ -2,7 +2,14 @@ import React, { useState } from 'react';
 
 import '../Styles/GameOverModal.css';
 
-export default function GameOverModal() {
+export default function GameOverModal(props) {
+	const isWinner = () => {
+		if (props.text.startsWith('Congratulations')) return true;
+		else return false;
+	};
+	const boxShadowColor = isWinner()
+		? '0px 0px 30px 10px rgba(0, 255, 0, 0.5)'
+		: '0px 0px 30px 10px rgba(255, 0, 0, 0.5)';
 	const modalStyle = {
 		position: 'fixed',
 		top: '50%',
@@ -13,7 +20,7 @@ export default function GameOverModal() {
 		width: '40%',
 		height: '25%',
 		borderRadius: '8px',
-		boxShadow: '0px 0px 30px 10px rgba(255, 0, 0, 0.5)',
+		boxShadow: boxShadowColor,
 		color: 'white',
 		display: 'flex',
 		flexDirection: 'column',
@@ -25,12 +32,13 @@ export default function GameOverModal() {
 
 	return (
 		<div style={modalStyle}>
-			<p>
-				Uh-oh! That image seems familiar. You've clicked it before! Remember, in
-				this game, every click counts. It's Game Over for now, but keep trying
-				and improve your memory!
-			</p>
-			<button className='game-over-button'>Play Again</button>
+			<p>{props.text}</p>
+			<button
+				onClick={props.resetGame}
+				className='game-over-button'
+			>
+				Play Again
+			</button>
 		</div>
 	);
 }

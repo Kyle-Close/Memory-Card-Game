@@ -47,15 +47,22 @@ export default function SelectCategory(props) {
 				/>
 			</div>
 			<div className='how-to-play'>
-				<span>Gameplay Instructions:</span> Choose a category as your theme for
-				the entire game. Progress through each level by clicking on the unique
-				images. However, avoid clicking on any image more than once, as it will
-				result in a loss. Note that the images will reorganize themselves after
-				each click.
+				<span>Gameplay Instructions</span>
+				<br></br>{' '}
+				<p>
+					Choose a category as your theme for the entire game. Progress through
+					each level by clicking on the unique images. However, avoid clicking
+					on any image more than once, as it will result in a loss. Note that
+					the images will reorganize themselves after each click.
+				</p>
 			</div>
 			<div className='scoring-instructions'>
-				<span>Scoring:</span> Gain 1 point by clicking an image that has not
-				already been clicked. Gain 3 points for completing a level.
+				<span>Scoring</span>
+				<br></br>{' '}
+				<p>
+					Gain 1 point by clicking an image that has not already been clicked.
+					Gain 3 points for completing a level.
+				</p>
 			</div>
 		</div>
 	);
